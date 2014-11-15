@@ -125,6 +125,15 @@ ruby1.8-clean:
 ruby1.9-clean:
 	cd priv/ruby1.9; make clean
 
+julia-test:
+	cd priv/julia; make test
+
+julia-test-verbose:
+	cd priv/julia; make test-verbose
+
+julia-clean:
+	cd priv/julia; make clean
+
 release: clean compile
 	./release bin
 
@@ -135,6 +144,7 @@ release-src: clean
 .PHONY: compile compile-test test test-verbose check doc clean python2-test
 .PHONY: python2-test-verbose create-ignore-file python3-test
 .PHONY: python3-test-verbose python-test python-test-verbose
+.PHONY: julia-test-verbose julia-test julia-test-verbose
 .PHONY: erlang-test erlang-test-verbose
 .PHONY: ruby-test ruby1.8-test ruby1.9-test
 .PHONY: erlang-clean python-clean python2-clean python3-clean
